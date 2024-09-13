@@ -1,5 +1,4 @@
 const { merge } = require('webpack-merge'); //used to merge two different webpack config objects 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json'); //load up all dependencies to be used as shared modules
@@ -21,9 +20,6 @@ const devConfig = {
                 marketing: 'marketing@http://localhost:8081/remoteEntry.js',
             },
             shared: packageJson.dependencies,
-        }),
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
         }),
     ]
 };
