@@ -10,7 +10,7 @@ const prodConfig = {
     output: {
         filename: '[name].[contenthash].js', // this ensures that whenever we build some files for production, 
         // all the different files that are built are going to use this template for naming. it is done primarily for caching issues.
-
+        publicPath: '/marketing/latest/',
     },
     optimization: {},
     plugins: [
